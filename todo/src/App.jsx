@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Todos from './Todos';
 
 class App extends Component {
   state = {
@@ -11,6 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Head</h1>
+        <Todos />
       </div>
     )
   }
