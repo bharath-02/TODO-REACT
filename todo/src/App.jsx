@@ -7,12 +7,20 @@ class App extends Component {
       {id: 1, content: 'eat'},
       {id: 2, content: 'sleep'}
     ]
+  };
+  deleteTodo = (id) => {
+    const todos = this.state.todos.filter(todo => {
+      return todo.id !== id;
+    });
+    this.setState({
+      todos : todos
+    })
   }
   render() {
     return (
-      <div className="App">
+      <div className="todo-app container">
         <h1 className="center blue-text">Todo's</h1>
-        <Todos todos={this.state.todos}/>
+        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
       </div>
     )
   }
